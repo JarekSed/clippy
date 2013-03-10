@@ -27,7 +27,7 @@ def swap_keys():
 	subprocess.Popen(swap_command.format(code=code2,key=key1), shell=True)
 	subprocess.Popen(swap_command.format(code=code1,key=key2), shell=True)
 
-def swap_callback(widget, ev):
+def swap_callback():
 	if random.random() < 0.75:
 		try:
 			swap_keys()
