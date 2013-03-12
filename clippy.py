@@ -2,6 +2,7 @@
 
 import gtk,gobject
 import egg.trayicon
+import random
 
 import glob, imp
 from os.path import join, basename, splitext
@@ -28,9 +29,9 @@ class Pranks:
 
         #TODO: this runs every prank, for testing. This should randommly select
         # and run only one.
-        for name, prank in self.pranks.iteritems():
-            res,msg = prank.run_prank()
-            print "ouput of", name +":", res,msg
+        name = random.choice(self.pranks.keys())
+        res,msg = self.pranks[name].run_prank()
+        print "ouput of", name +":", res,msg
 
 
 def main():
