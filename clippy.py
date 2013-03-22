@@ -27,10 +27,10 @@ class Pranks:
         the prank interface (run_prank(), returning tuple of
         (status,message)"""
 
-        #TODO: this runs every prank, for testing. This should randommly select
-        # and run only one.
         name = random.choice(self.pranks.keys())
         res,msg = self.pranks[name].run_prank()
+        # TODO: display message (maybe with libnotify?)
+        # for now, just debug print to console
         print "ouput of", name +":", res,msg
 
 
