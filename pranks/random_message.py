@@ -8,9 +8,9 @@ def run_prank():
         "You appear to be using an unsupported bootloader. Installing MSBoot from MSDN and configuring Boot.ini",
         "Your motherboard appears to be abnormally hot. Shut down immediately to avoid fire.",
         "ERROR: PC LOAD LETTER",
-        "You appear to have custom vim settings in ~/.vimrc. Let me remove them for you."
-        "You appear to have custom bash settings in ~/.bashrc. Let me remove them for you."
-        "You appear to have a login shell. Login shells have been determined dangerous, let me change that to /bin/false for you."
-        "Executable named 'halt' detected in $PATH. Due to security reasons, it has been disabled."
+        "You appear to have custom vim settings in ~/.vimrc. Let me remove them for you.",
+        "You appear to have custom bash settings in ~/.bashrc. Let me remove them for you.",
+        "You appear to have a login shell. Login shells have been determined dangerous, let me change that to /bin/false for you.",
+        "Executable named 'halt' detected in $PATH. Due to security reasons, it has been disabled.",
     ]
     return True, random.choice(messages)

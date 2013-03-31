@@ -4,8 +4,14 @@ import gtk,gobject
 import egg.trayicon
 import random
 
+import pynotify
+
 import glob, imp
+import os.path
 from os.path import join, basename, splitext
+
+clippy_image = os.path.abspath(os.path.curdir) + "/clippy.png"
+clippy_icon = os.path.abspath(os.path.curdir) + "/clippy_small.jpg"
 
 class Pranks:
     """ This class is responsible for loading, selecting, and running pranks. """
@@ -29,23 +35,24 @@ class Pranks:
 
         name = random.choice(self.pranks.keys())
         res,msg = self.pranks[name].run_prank()
-        # TODO: display message (maybe with libnotify?)
-        # for now, just debug print to console
-        print "ouput of", name +":", res,msg
-
+        
+        n = pynotify.Notification("Alert!", msg, clippy_image)
+        n.show()
 
 def main():
+    pynotify.init("Clippy")
+
     pranks = Pranks()
-    tray = egg.trayicon.TrayIcon("TrayIcon")
-    box = gtk.EventBox()
-    label = gtk.Label("clippy goes here")
-    box.add(label)
-    tray.add(box)
-    tray.show_all()
 
-    box.connect("button-press-event", pranks.run_random_prank)
+    statusicon = gtk.StatusIcon()
+    statusicon.set_from_file(clippy_icon)
 
-    gobject.timeout_add(30*1000, pranks.run_random_prank)
+    statusicon.set_visible(True)
+
+    statusicon.connect("button-press-event", pranks.run_random_prank)
+
+    #commented for testing purposes
+    #gobject.timeout_add(30*1000, pranks.run_random_prank)
 
     gtk.main()
 
