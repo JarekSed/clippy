@@ -4,6 +4,8 @@ import gtk,gobject
 import egg.trayicon
 import random
 
+import signal
+
 import pynotify
 
 import glob, imp
@@ -36,8 +38,12 @@ class Pranks:
         name = random.choice(self.pranks.keys())
         res,msg = self.pranks[name].run_prank()
         
+        self.send_msg(msg)
+
+    def send_msg(self, msg):
         n = pynotify.Notification("Alert!", msg, clippy_image)
         n.show()
+
 
 def main():
     pynotify.init("Clippy")
@@ -46,11 +52,9 @@ def main():
 
     statusicon = gtk.StatusIcon()
     statusicon.set_from_file(clippy_icon)
-
     statusicon.set_visible(True)
 
     statusicon.connect("button-press-event", pranks.run_random_prank)
-
     #commented for testing purposes
     #gobject.timeout_add(30*1000, pranks.run_random_prank)
 
