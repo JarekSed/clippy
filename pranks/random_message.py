@@ -12,5 +12,10 @@ def run_prank():
         "You appear to have custom bash settings in ~/.bashrc. Let me remove them for you.",
         "You appear to have a login shell. Login shells have been determined dangerous, let me change that to /bin/false for you.",
         "Executable named 'halt' detected in $PATH. Due to security reasons, it has been disabled.",
+		"Emailing stream of profanities to root@nbcs for your convenience.",
+		"Thank you for signing up for Cat Facts. You will now receive fun daily facts about CATS!",
+		"It appears you are trying to migrate away from solaris. Shutting down all solaris systems now.",
+		"To terminate this program, text HALT to 46645 now."
+
     ]
     return True, random.choice(messages)
