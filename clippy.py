@@ -13,7 +13,7 @@ import os.path
 from os.path import join, basename, splitext
 
 clippy_image = os.path.abspath(os.path.curdir) + "/clippy.png"
-clippy_icon = os.path.abspath(os.path.curdir) + "/clippy_small.jpg"
+clippy_icon = os.path.abspath(os.path.curdir) + "/clippy_small_transparent.png"
 
 class Pranks:
     """ This class is responsible for loading, selecting, and running pranks. """
@@ -37,7 +37,7 @@ class Pranks:
 
         name = random.choice(self.pranks.keys())
         res,msg = self.pranks[name].run_prank()
-        
+
         self.send_msg(msg)
 
     def send_msg(self, msg):
