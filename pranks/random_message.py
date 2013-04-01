@@ -15,7 +15,13 @@ def run_prank():
 		"Emailing stream of profanities to root@nbcs for your convenience.",
 		"Thank you for signing up for Cat Facts. You will now receive fun daily facts about CATS!",
 		"It appears you are trying to migrate away from solaris. Shutting down all solaris systems now.",
-		"To terminate this program, text HALT to 46645 now."
+		"To terminate this program, text HALT to 46645 now.",
+        "Have you called your mother recently?",
+        "Executing 'dd if=/dev/urandom of=/dev/mem' now.",
+        "Replacing every third bit of /dev/sda1 with 0.",
+        "MAIN SCREEN TURN ON",
+        "YOU HAVE NO CHANCE TO SURVIVE MAKE YOUR TIME",
+        "Launching all zig. For great justice.",
 
     ]
     return True, random.choice(messages)

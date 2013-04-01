@@ -1,10 +1,7 @@
 #!/usr/bin/python
 
 import gtk,gobject
-import egg.trayicon
 import random
-
-import signal
 
 import pynotify
 

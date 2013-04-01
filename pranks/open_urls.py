@@ -10,6 +10,11 @@ urls = [
     ("http://en.wikipedia.org/wiki/Special:Random", "Opening a random wikipedia page"),
     ("http://www.youtube.com/watch?v=xuPSIbABYVU", "Jazz hands!"),
     ("http://www.reddit.com/r/mylittlepony", "Do you like ponies?"),    
+    ("http://www.youtube.com/watch?v=ZZ5LpwO-An4", "I feel a little peculier."),
+    ("http://www.youtube.com/user/USClippyPaperclip", "Did you know I have a youtube channel?"),
+    ("http://www.youtube.com/watch?v=NI2LVI4xgvs", "Episode.1 - Clippy Gets Clipped"),
+    ("http://www.nyan.cat/", "nyan"),
+    ("http://www.youtube.com/watch?v=8fvTxv46ano", "This is truely a classic."),
 ]
 
 def run_prank():
